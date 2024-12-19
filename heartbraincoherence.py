@@ -1,5 +1,21 @@
 import time
 # The `import` statement in Python is used to bring in external modules or packages into your current
+import requests
+
+# Define the URL of the API endpoint
+url = 'https://jsonplaceholder.typicode.com/posts'
+
+# Make a GET request to the API
+response = requests.get(url)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Parse the JSON response
+    data = response.json()
+    # Print the first post
+    print(data [#agent_source#](0))
+else:
+    print(f"Error: {response.status_code}")
 # Python script. It allows you to use functions, classes, and variables defined in those modules
 # within your own code. When you use `import`, Python searches for the specified module in a list of
 # directories that it maintains. If the module is found, it is loaded into your script and you can
